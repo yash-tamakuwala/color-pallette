@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-6xl font-bold">Hello World</h1>
+      <h1 className="text-6xl font-bold">Color Palette</h1>
       <video width="400" controls>
         Your browser does not support HTML video.
         <source src="goose.mp4" type="video/mp4" />
@@ -36,11 +36,10 @@ export default function Home() {
             </span>
           </div>
           <span>
-            Generate Color pallet
+            Generate color palette
           </span>
         </div>
       </button>
-
 
       <canvas id="colorCanvas" width="400" height="100"></canvas>
     </main>
