@@ -2,7 +2,7 @@ import clusteringAlgo from 'density-clustering';
 
 const kmeans = new clusteringAlgo.KMEANS();
 const dbscan = new clusteringAlgo.DBSCAN();
-const clustering = () => {
+const clustering = (videoStartingTime) => {
   let allColors = [];
 
 // Process frames at 1 frame per second
@@ -26,7 +26,6 @@ const clustering = () => {
     return ctx.getImageData(0, 0, width, height).data;
   }
 
-
   function extractColors(frameData, width, height, sampleRate) {
     let colors = [];
     for (let y = 0; y < height; y += sampleRate) {
@@ -44,7 +43,7 @@ const clustering = () => {
   }
 
 
-  const DURATION = 30;  // Duration in seconds
+  const DURATION = videoStartingTime + 30;  // Duration in seconds
   const INTERVAL = 1;  // Capture frame every 1 second. Change as per requirement
 
   video.addEventListener('timeupdate', function () {
@@ -52,6 +51,8 @@ const clustering = () => {
       console.log(video.currentTime, video.currentTime % INTERVAL);
       if (video.currentTime % INTERVAL < 0.1) {  // To account for slight deviations
         processFrame();
+        const loader = document.getElementById('loader');
+        loader.style.display='block'
       }
     } else {
       video.pause();  // Pause the video after 30 seconds
@@ -78,6 +79,8 @@ const clustering = () => {
       ctx.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
       ctx.fillRect(index * blockWidth, 0, blockWidth, canvas.height);
     });
+    const loader = document.getElementById('loader');
+    loader.style.display='none'
   }
 
   function getDominantColors(colors, clusterCount = 10) {
@@ -105,7 +108,7 @@ const clustering = () => {
   }
 
 
-  video.play();  // Start the video
+  video.play().then();  // Start the video
 }
 
 export default clustering;
