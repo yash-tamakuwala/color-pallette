@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.40.2",
     "density-clustering": "^1.3.0",
     "next": "13.5.4",
     "react": "^18",
