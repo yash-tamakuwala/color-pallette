@@ -2,7 +2,7 @@ import clusteringAlgo from 'density-clustering';
 
 const kmeans = new clusteringAlgo.KMEANS();
 const dbscan = new clusteringAlgo.DBSCAN();
-const clustering = (videoStartingTime) => {
+const clustering = (videoStartingTime, duration) => {
   let allColors = [];
 
 // Process frames at 1 frame per second
@@ -43,7 +43,7 @@ const clustering = (videoStartingTime) => {
   }
 
 
-  const DURATION = videoStartingTime + 30;  // Duration in seconds
+  const DURATION = duration;  // Duration in seconds
   const INTERVAL = 1;  // Capture frame every 1 second. Change as per requirement
 
   video.addEventListener('timeupdate', function () {

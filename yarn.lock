@@ -493,6 +493,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@types/density-clustering@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@types/density-clustering/-/density-clustering-1.3.1.tgz#c01e0546538b4ff994ec504d70f34782b6e21a19"
+  integrity sha512-KJ4E0KT3O+Kk74zA4Z24+K2L0/TBmjbHtD9WBEjMvEHDJoNYqt8H7nBJfG1nL2NvcO6d6qkDxyTBZ0Qd8Ttw4w==
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
